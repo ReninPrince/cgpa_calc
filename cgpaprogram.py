@@ -1,15 +1,48 @@
 
-print("Four Credit Subjects are  40 CS 601")
-print("Four Credit Subjects are  40 CS 602")
+##print("Four Credit Subjects are  40 CS 601")
+##print("Four Credit Subjects are  40 CS 602")
 
 k = []
 p = []
 u = []
 y = []
+eg = []
+
 
 a = int(input("Enter number of four credit subjects:"))
 b = int(input("Enter number of three credit subjects:"))
 c = int(input("Enter number of two credit subjects:"))
+d = int(input("Enter number of eight credit subjects:"))
+
+for i in range(d):
+    fcsub = input("enter grade (8credit):")
+    eg.append(fcsub)
+    eg[i] = fcsub.upper()
+
+    if eg[i] == 'S' :
+        eg[i] = 10 * 8
+
+    elif eg[i] == 'A' :
+        eg[i] = 9 * 8
+
+    elif eg[i] == 'B' :
+        eg[i] = 8 * 8
+
+    elif eg[i] == 'C' :
+        eg[i] = 7 * 8
+
+    elif eg[i] == 'D' :
+        eg[i] = 6 * 8
+
+    elif eg[i] == 'E' :
+        k[i] = 5 * 8
+
+    elif k[i] == 'RA' :
+        eg[i] = 0 * 8
+
+    else:
+        print("error")
+
 for i in range(a):
     fcsub = input("enter grade (4credit):")
     k.append(fcsub)
@@ -95,6 +128,10 @@ for i in range(c):
     else:
         print("error")
 xtsub = input("enter grade (0credit):")
+
+for i in eg:
+    y.append(i)
+
 for i in k:
 ##    e = i/((len(k) * 4) + (len(p) * 3) + (len(u) * 2))
     y.append(i)
@@ -104,12 +141,27 @@ for i in p:
 for i in u:
 ##    e = i/((len(k) * 4) + (len(p) * 3) + (len(u) * 2))
     y.append(i)
+    
 print (sum(y))
-print ((len(k) * 4) + (len(p) * 3) + (len(u) * 2))
-SGPA = (sum(y)) / ((len(k) * 4) + (len(p) * 3) + (len(u) * 2))
+print ((len(eg) * 8) +(len(k) * 4) + (len(p) * 3) + (len(u) * 2))
+SGPA = (sum(y)) / ((len(eg) * 8) +(len(k) * 4) + (len(p) * 3) + (len(u) * 2))
 print("SGPA:",SGPA)
 ocgpa = float(input("Enter old CGPA:"))
 numsematt = int(input("Enter number of sem attended:"))
 
 CGPA = (ocgpa * numsematt + SGPA) / (numsematt + 1)
 print("CGPA:",CGPA)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
